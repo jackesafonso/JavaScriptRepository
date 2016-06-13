@@ -1,0 +1,55 @@
+<!Doctype html5>
+    
+    <html>
+        
+        <head>
+        </head>
+            
+            
+            <body>
+                
+                <form>
+                    <input type="number" id="input1"/>
+                    <input type="number" id="input2"/>
+                </form>
+                <div><button id="button1">Button</button></div>
+                
+                <div id="demo"></div>
+                
+                
+                
+                <script >
+                
+                //goes with js_3.html
+//EVENT LISTENER
+var event1 = document.getElementById("button1");
+event1.addEventListener('click',myfirst,false);
+                    
+function myfirst(){
+ 
+    //User input 1 convert in JS to a number
+    var userinput1 = parseInt(document.getElementById("input1").value);  
+    //User input 2 convert in JS to a number
+    var userinput2 = parseInt(document.getElementById("input2").value);
+   // window.alert("test");
+  //  console.log("userinput1 = " + userinput1);
+   //  console.log("userinput2 = " + userinput2);
+    
+      document.getElementById("demo").innerHTML = userinput1 + userinput2; 
+    //alert (userinput1);
+  
+}
+                </script>
+                
+
+            
+            
+            
+            </body>
+        
+        
+    
+    
+    
+    
+    </html>
