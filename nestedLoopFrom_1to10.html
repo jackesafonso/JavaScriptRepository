@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>In this example, we have two loops. Because there is one loop that is inside the other, we call this a nested loop. The first loop is often called an "outer loop", and the second is often called the "inner loop" because it is inside the first, outer loop.</p>
+
+<p>The outer loop executes first, and for each time the outer loop is executed, the inner loop will also execute.</p>
+    
+  <!--    <button onclick="myFunction()">Try it</button>-->
+
+<!--
+<button onclick="myFunction()">Try it</button>
+
+(onclick) was replaced by <button type="button" id="button1">Try it</button because that's the old wasys of doing it, the more recent way to do it is through EventListener:
+
+e.g.
+
+var event1 = document.getElementById("button1");
+event1.addEventListener('click' , myFunction , false);
+    
+-->
+
+<button type="button" id="button1">Try me</button>
+
+<p id="demo"></p>
+
+<script>
+var event1 = document.getElementById("button1");
+event1.addEventListener('click', myFunction, false);
+    
+function myFunction() {
+    var text = "";
+    var i, j;
+
+    for (i = 0; i < 10; i++) {
+        text += "<br>" + "i = " + i + ", j = ";
+
+        for (j = 0; j < 10; j++) {
+            document.getElementById("demo").innerHTML = text += j + " ";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
