@@ -1,3 +1,4 @@
+
 <!Doctype html5>
     
     <html>
@@ -11,14 +12,19 @@
                 <form>
                     <input type="number" id="input1"/>
                     <input type="number" id="input2"/>
+                    <input type="number" id="input3"/>
                 </form>
                 <div><button id="button1">Button</button></div>
                 
+   <!--demo helps to display the value of calculation Z on the webpage-->             
                 <div id="demo"></div>
                 
+    <!--demo1 helps to display the value of calculation q on the webpage-->     
+                <div id="demo1"></div>
                 
                 
                 <script >
+                   
                 
                 //goes with js_3.html
 //EVENT LISTENER
@@ -31,17 +37,32 @@ function myfirst(){
     var userinput1 = parseInt(document.getElementById("input1").value);  
     //User input 2 convert in JS to a number
     var userinput2 = parseInt(document.getElementById("input2").value);
+    // //User input 3 convert in JS to a number
+    var userinput3 = parseInt(document.getElementById("input3").value);
    // window.alert("test");
   //  console.log("userinput1 = " + userinput1);
    //  console.log("userinput2 = " + userinput2);
+   
+   //input for calculations z and q
+   var a = userinput1;
+   var b = userinput2;
+   var c = userinput3;
+   
+  //Calculation Z  
+   var z = (a + b) * c;
     
-      document.getElementById("demo").innerHTML = Math.max(userinput1 , userinput2); 
+  //Calculation q
+   var q = a + b + c;                  
+                
+    
+   //display the value of calculation Z on the webpage  
+   document.getElementById("demo").innerHTML = z;
+    
+   //display the value of calculation q on the webpage   
+   document.getElementById("demo1").innerHTML = q;
     //alert (userinput1);
     
-    
-    
-  
-  
+   
 }
                 </script>
                 

@@ -35,13 +35,25 @@ function myfirst(){
   //  console.log("userinput1 = " + userinput1);
    //  console.log("userinput2 = " + userinput2);
     
-      document.getElementById("demo").innerHTML = Math.max(userinput1 , userinput2); 
+    //the Math.max helps to pick the largest value between userinput1 and userinput2
+   document.getElementById("demo").innerHTML = userinput1 + userinput2; 
     //alert (userinput1);
     
+    if (userinput1 + userinput2 < 0)
+    {
+        alert("This is a negative value");
+    }
     
     
-  
-  
+   if (userinput1 + userinput2 < 10)
+   {
+     alert("This Value is less than 10")  
+   }
+   else
+   {
+     alert("This value is greater than 10")   
+   }    
+       
 }
                 </script>
                 
