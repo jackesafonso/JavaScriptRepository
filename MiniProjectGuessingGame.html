@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Game</title>
+</head>
+<body>
+    
+<!--    1.1 We also need a way to let the user input his/her guess in html-->
+     <input type="text" id="guess" />
+    
+<!--     1.2 We need to let the user check if their guess is right in html-->
+    <button type="button" id="guess1">Guess!</button>
+    
+<!--     1.3 We need a way to communicate the result to the user in html-->
+    <div id="message"></div>
+    <button type="button" id="generateSecretRandomNumber">Restart</button>
+
+    <script>
+    var secretRandomNumber; // outside makes it available to other functions
+    function generateSecretRandomNumber(){
+        //Load: What do you need to be able to start a game?
+//     1.4 We need a secret random number in js
+       secretRandomNumber = Math.round(Math.random() * 50);
+    }
+        
+         var event1 = document.getElementById("guess1");
+        event1.addEventListener('click' , checkGuess , false);
+        
+        var event1 = document.getElementById("generateSecretRandomNumber");
+        event1.addEventListener('click' , checkGuess , false);
+
+    function checkGuess(){
+        // 2. Start: Lets play!
+//     2.1 The user types a number
+//     2.2 The user confirms the number and sends it to be checked (presses the Guess button)
+        var guess = document.getElementById('guess').value;
+        
+        
+       //2.3 The game checks if the number is equal to the secret number, if not continue at 2.4
+        if (guess == secretRandomNumber){
+            
+// 2.3.1 The game communicates to the user that his/her guess was correct!       
+            document.getElementById('message').innerHTML = 'Correct!';
+//2.4 The game checks if the number is less than the secret number, if not continue at 2.5
+        }else if (guess < secretRandomNumber){
+            
+ //            2.4.1 The game communicates to the user that his/her guess was too low
+//         2.4.2 The user tries another guess, continue at 2.1
+            document.getElementById('message').innerHTML = 'Too low, try again';
+        }else{
+            
+//            2.5 The number must be greater than the secret number
+//         2.5.1 The game communicates to the user that his/her guess was too high
+//         2.5.2 The user tries another guess, continue at 2.1
+            document.getElementById('message').innerHTML = 'Too high, try again';
+        }
+        
+    //    End: Want to play again?
+//     3.1 Restart - generate a new secret random number
+//     3.2 Bye bye - close the page
+    }
+
+    // make sure we have a brand new secret number once the page loads
+    generateSecretRandomNumber();
+    
+    </script>
+   
+    
+    
+    
+</body>
+</html>
+
+

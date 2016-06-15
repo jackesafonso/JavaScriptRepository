@@ -1,0 +1,79 @@
+<doctype html>
+
+
+    <html>
+        
+        <head>
+        
+        
+        </head>
+        
+        
+        <body>
+            
+            <form>
+             <p>Please add something to the array:</p>   
+            <input type="text" id="input1"/>
+            <!--<input type="number"  id="input2"/>
+            <input type="number"  id="input3"/>  -->
+                
+               
+                
+                <div id="demo"> </div>
+<!-- <br/> this is gives space between things             //-->
+                <br/>
+                <div id="demo1"> </div> 
+             </form>
+            <button id="button">Button</button>
+            
+            
+            <script>
+                
+                //declaring an array
+                var items = ["apples","oranges", "pineapples","peaches","pears"];
+                
+                var event1 = document.getElementById("button");
+                event1.addEventListener('click' , myArray , false);
+                
+                function myArray(){
+                    
+                    //this is the best way to work through an array
+                    // for each items in the array
+                    for(var i = 0; i < items.length; i++)
+                        {
+                            //add an array items to display 
+                            document.getElementById("demo").innerHTML += items[i] + " ";
+                        }
+                    
+                    //add an item to the end of the array
+                    items.push(document.getElementById("input1").value)
+                    
+                    //parseInt was used to add the input up and stop concatination
+                    //items[0] = parseInt(document.getElementById("input1").value);
+                    
+                    /*//parseInt was used to add the input up and stop concatination
+                    items[1] = parseInt(document.getElementById("input2").value);
+                    
+                    //parseInt was used to add the input up and stop concatination
+                    items[2] = parseInt(document.getElementById("input3").value);*/
+                    
+                    //displaying the first 3 items of the array
+                    document.getElementById("demo1").innerHTML = items[0] + " "+ items[1] + " "+ items[2];
+                    
+                  
+                   
+                }
+            
+            
+            </script>
+        
+        
+        
+        </body>
+        
+        
+        
+    
+    
+    
+    </html>
