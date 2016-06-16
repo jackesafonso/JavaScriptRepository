@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to remove the first element of the array.</p>
+
+<button id="button3">Try it</button>
+
+<p id="demo"></p>
+    
+    <br/>
+    
+    <p>Click the button to add the first element of the array</p> 
+    
+    
+    <button id="button">Add it</button>
+    
+    <br/>
+    
+    <p>Click the button to add the last element of the array</p>
+    
+    <button id="button1">Add it</button>
+    
+    <br/>
+    
+    <p>Click the button to remove the last element of the array</p>
+    
+    <button id="button2">Try it</button>
+    
+
+<script>
+    
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+    
+    var event1 = document.getElementById("button3");
+    document.addEventListener('click', myFunction, false)
+
+function myFunction() {
+//The shift() method removes the first item of an array, and returns that item.
+//Note: This method changes the length of an array!
+//Tip: To remove the last item of an array, use the pop() method.
+    fruits.shift();
+    document.getElementById("demo").innerHTML = fruits;
+}
+    
+    
+    var event1 = document.getElementById("button");
+    event1.addEventListener('click', myArray , false);
+    
+    
+    function myArray() {
+//The unshift() method adds new items to the beginning of an array, and returns the new length.
+//Note: This method changes the length of an array.
+//Tip: To add new items at the end of an array, use the push() method.
+    fruits.unshift("Lemon", "Pineapple");
+    document.getElementById("demo").innerHTML = fruits;
+}
+    
+    
+    var event1 = document.getElementById("button1");
+    event1.addEventListener('click', myArray1, false);
+                            
+   function myArray1(){
+//The push() method adds new items to the end of an array, and returns the new length.
+//Note: The new item(s) will be added at the end of the array.
+//Note: This method changes the length of the array.
+//Tip: To add items at the beginning of an array, use the unshift() method.
+         fruits.push("Kiwi");
+        document.getElementById("demo").innerHTML= fruits; 
+    } 
+    
+    
+  var event1 = document.getElementById("button2");
+    event1.addEventListener('click', myArray2, false);
+                            
+    function myArray2(){
+//The pop() method removes the last element of an array, and returns that element.
+//Note: This method changes the length of an array.
+//Tip: To remove the first element of an array, use the shift() method.
+        
+        fruits.pop();
+        document.getElementById("demo").innerHTML = fruits;
+    }
+    
+</script>
+
+</body>
+</html>
