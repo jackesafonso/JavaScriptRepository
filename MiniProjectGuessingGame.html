@@ -1,20 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
+    
+<!--  applying bootstrap -->
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
     <title>Number Game</title>
+    
+    <style>
+        h1
+        {
+            background-color: bisque;
+        }
+        .myStyle
+        {
+           background-color:darkseagreen; 
+        }
+        .game
+        {
+            margin: 5%;
+            
+        }
+    </style>
+    
 </head>
+    
 <body>
     
-<!--    1.1 We also need a way to let the user input his/her guess in html-->
-     <input type="text" id="guess" />
     
-<!--     1.2 We need to let the user check if their guess is right in html-->
-    <button type="button" id="guess1">Guess!</button>
     
-<!--     1.3 We need a way to communicate the result to the user in html-->
-    <div id="message"></div>
-    <button type="button" id="generateSecretRandomNumber">Restart</button>
+    
+<!--    applying bootstrap-->
+<div class="container">
+    <div class="row">
+        <!--    applying bootstrap-->  
+        <div class="col-sm-4">   
+        </div><!--col-->    
+        <div class="col-sm-4">      
+            <h1 class="text-center">Guessing Game</h1> 
+        </div>
+    </div>    
+    <!--    applying bootstrap-->      
+    <div class="row">
+        <!--    applying bootstrap-->  
+        <div class="col-sm-4">   
+        </div><!--col-->    
+        <div class="col-sm-4 myStyle">  <!-- myStyle was used to help with css style-->
+            
+                <p class="text-center"> A Little Bit of Responsive JavaScript</p>
 
+                <div class="game"> this div was used to help with CSS style
+                    <!--    1.1 We also need a way to let the user input his/her guess in html-->
+                    <input type="text" id="guess" />
+
+                    <!--     1.2 We need to let the user check if their guess is right in html-->
+                    <button type="button" id="guess1">Guess!</button>
+                    <button type="button" id="generateSecretRandomNumber">Restart</button>
+                    <!--     1.3 We need a way to communicate the result to the user in html-->
+                    <div id="message"></div>
+                </div><!--game-->
+        
+                <!--    applying bootstrap--> 
+        </div><!--col-->
+    <!--    applying bootstrap-->
+    </div><!--row-->
+        
+        
+    <!--    applying bootstrap-->   
+
+    <div class="row">
+        
+        <div class="col-sm-4">   
+        
+            <!--    applying bootstrap--> 
+        </div><!--col-->
+    <!--    applying bootstrap-->
+    </div><!--row-->
+            
+<!--   closing container-->
+</div><!--container-->          
+        
     <script>
     var secretRandomNumber; // outside makes it available to other functions
     function generateSecretRandomNumber(){
@@ -64,7 +134,8 @@
     generateSecretRandomNumber();
     
     </script>
-   
+        
+        
     
     
     
