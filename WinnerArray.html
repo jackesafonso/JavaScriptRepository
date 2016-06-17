@@ -15,11 +15,11 @@
                 <input type = "text" id="input1"> 
             </form>
         
-            <div><button id="button1">Add to List</button></div> 
-            <div><button id="button2">Pick Winner</button> </div>
+            <div><button id="button1">Enter names</button></div> 
+            <div><button id="button2">Generate randow winner</button> </div>
             
             <!-Display the winner->
-            <div id="Display List"></div>
+            <p id="displayList"></p>
             
             <!-Display the winner->
             <div id="Winner"></div>
@@ -27,7 +27,51 @@
         </body>
         
         
-        <script src"pickwinner.js"></script>
+        <script>
+            
+            //Add Event Listeners 
+var event1 = document.getElementById("button1");
+event1.addEventListener('click', thelist , false);           
+
+//declare the array
+var items = [];
+
+function thelist(){
+    
+   // for(var i = 0; i < items.length; i++)
+        
+       // document.getElementById("displayList").innerHTML += items [i] + "";
+    
+  //  items.push(document.getElementById("input1").value);
+    
+    //it was used to get the user input
+   var userInput = document.getElementById ("input1").value;
+    //add the new member
+    var addElements = myArray.push(userInput);
+    
+    document.getElementById("displayList").innerHTML = userInput + "";
+    
+    
+}
+            
+  var randomWinner = items[Math.floor(Math.random() * items.length)]; 
+            
+  console.log(items);
+            
+
+document.getElementById("Winner").innerHTML = items;          
+
+//function displayarray(){
+   // var index;
+    //for (index = 0, index < myArray.length; index++){
+       // themembers = thelist + myArray [index];
+        
+  //  }
+    // document.getElementById("thelist").innerHTML = themembers;
+        
+//}//end of function
+        
+        </script>
     
     
     
