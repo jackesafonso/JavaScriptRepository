@@ -1,0 +1,166 @@
+<doctype html>
+
+
+<html> 
+
+
+        <head>
+
+                    <!--  applying bootstrap -->
+                <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+              <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+                    <title>Calculate Net Salary</title>
+
+                       <style>
+
+                                  .myStyle
+                            {
+                               background-color: #8e7979
+                            }
+
+                       </style>
+            
+                        <meta charset="utf-8"> <!--this piece of code was added to html header in order to get characters like £ to be displayed proplerly on the webpage-->
+
+        </head>
+
+            <body>
+
+                           <!--    applying bootstrap-->
+                <div class="container myStyle">
+                    <div class="row"> <!-- applying bootstrap row -->
+                        <!--    applying bootstrap col-->  
+                        <div class="col-sm-4">   
+                        </div><!--col-->    
+                        <div class="col-sm-4 "> 
+
+
+
+
+                             <br/>
+
+                        </div><!--col-->  
+                    </div><!--row-->     
+
+
+
+
+
+                 <!--    applying bootstrap-->      
+                <div class="row">
+                    <!--    applying bootstrap-->  
+                    <div class="col-sm-4">   
+
+
+
+
+
+                    <form>
+
+                          <h3>ENTER GROSS SALARY</h3>
+                            <br/>    
+                           <input type="number" size="15" id="input1"/>
+
+                    </form>
+
+
+
+
+                        <br/>
+
+
+                       <button  id="button">Calculate Net Salary</button>
+
+
+                          <div id="salary"></div>  
+                           <div id="allawance"></div> 
+                            <did id="net"></did>
+
+
+                                <!--    applying bootstrap--> 
+                        </div><!--col-->
+                    <!--    applying bootstrap-->
+                    </div><!--row-->
+
+                    <!--   closing container-->
+                </div><!--container-->          
+
+
+                <script>
+
+                      var event1 = document.getElementById("button");
+                      event1.addEventListener('click', myFunction, false);
+
+
+                            
+
+
+                            function myFunction(){
+
+                                   var getGrossSalary = document.getElementById("input1").value;
+
+                                    document.getElementById("salary").innerHTML = "Gross Salary is £" + getGrossSalary;
+
+                                    document.getElementById("allawance").innerHTML = "The allawance is £11000"
+
+
+
+
+                                        if(getGrossSalary > 11000 + 32000){
+
+                                            var salary = getGrossSalary - (11000 + 32000);
+
+                                            var tax40 = salary * 0.4;
+
+                                            var taxtwenty = 32000 * 0.2;
+
+                                            var netsalary = getGrossSalary - taxtwenty - tax40;
+
+                                            document.getElementById("net").innerHTML = "The Net Salary is £" + netsalary;
+
+                                        }
+
+
+                                        else if (getGrossSalary > 11000){
+
+                                          var result = getGrossSalary - 11000; 
+
+                                          var tax20 = result * 0.2
+
+                                         var result1= result - tax20 + 11000;
+
+                                         var netSalary = result1;
+
+                                            document.getElementById("net").innerHTML = "The Net Salary is £" + netSalary; 
+
+                                }
+
+                               else{
+
+                                    document.getElementById("net").innerHTML = "The net salary is £" + getGrossSalary + " as the gross salary is equal or bellow the allawance, therefore this person can not be taxed";
+
+                                }
+
+
+
+                                }
+
+
+                </script>
+
+
+
+
+
+
+            </body>
+
+    </html>    
+
+
+

@@ -11,10 +11,11 @@
         
         <body>
             
-            <form>
-                <input type = "text" id="input1"> 
-            </form>
-        
+            
+                <input type = "text" id="input1"/> 
+            
+            <br/>
+            <br/>
             <div><button id="button1">Enter names</button></div> 
             <div><button id="button2">Generate randow winner</button> </div>
             
@@ -30,36 +31,50 @@
         <script>
             
             //Add Event Listeners 
-var event1 = document.getElementById("button1");
-event1.addEventListener('click', thelist , false);           
-
 //declare the array
 var items = [];
+       
+            
+var event1 = document.getElementById("button1");
+event1.addEventListener('click', thelist , false);
+            
+var event1 = document.getElementById("button2");
+event1.addEventListener('click', winner, false);            
+
+
 
 function thelist(){
     
-   // for(var i = 0; i < items.length; i++)
-        
-       // document.getElementById("displayList").innerHTML += items [i] + "";
+    items.push(document.getElementById("input1").value);
+    //clear this at the start of the function 
+    var output = ""; 
     
-  //  items.push(document.getElementById("input1").value);
-    
+    for(var i = 0; i < items.length; i++)
+    {
+       output += items[i] + "<br/>";    
+    }
+    document.getElementById("displayList").innerHTML = output;
     //it was used to get the user input
-   var userInput = document.getElementById ("input1").value;
+   //var userInput = document.getElementById ("input1").value;
     //add the new member
-    var addElements = myArray.push(userInput);
+    //var addElements = myArray.push(userInput);
     
-    document.getElementById("displayList").innerHTML = userInput + "";
+   // document.getElementById("displayList").innerHTML = userInput + "";
     
     
 }
             
-  var randomWinner = items[Math.floor(Math.random() * items.length)]; 
-            
-  console.log(items);
+ function winner(){
+     
+     
+ var randomWinner = items[Math.floor(Math.random() * items.length)]; 
+          
+  //console.log(items);
             
 
-document.getElementById("Winner").innerHTML = items;          
+  document.getElementById("Winner").innerHTML = randomWinner; 
+     
+ }
 
 //function displayarray(){
    // var index;
